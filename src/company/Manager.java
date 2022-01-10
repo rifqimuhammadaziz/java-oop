@@ -1,3 +1,5 @@
+package company;
+
 // PARENT
 public class Manager extends Employee{
     String company;

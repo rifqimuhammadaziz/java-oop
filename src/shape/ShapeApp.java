@@ -1,3 +1,5 @@
+package shape;
+
 public class ShapeApp {
     public static void main(String[] args) {
         var shape = new Shape();

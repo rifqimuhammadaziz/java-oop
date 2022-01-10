@@ -1,3 +1,5 @@
+package shape;
+
 class Shape {
     int getCorner() {
         return 0;

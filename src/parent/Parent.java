@@ -1,3 +1,5 @@
+package parent;
+
 class Parent {
     String name;
 
@@ -6,7 +8,7 @@ class Parent {
     }
 }
 
-class Child extends Parent{
+class Child extends Parent {
     // variable hiding
     String name;
 
@@ -16,3 +18,4 @@ class Child extends Parent{
         System.out.println("Parent name is " + super.name);
     }
 }
+

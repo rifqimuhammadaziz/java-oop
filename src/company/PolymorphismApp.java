@@ -1,3 +1,5 @@
+package company;
+
 public class PolymorphismApp {
     public static void main(String[] args) {
         /**

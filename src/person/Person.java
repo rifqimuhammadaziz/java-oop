@@ -1,3 +1,5 @@
+package person;
+
 class Person {
     /**
      * Fields : attribute from object

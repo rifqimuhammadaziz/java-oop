@@ -1,3 +1,5 @@
+package company;
+
 /**
  * Inheritance : have all attribute/methods from parent
  */
