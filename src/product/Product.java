@@ -17,4 +17,6 @@ public class Product {
     public Product(String type) {
         this.type = type;
     }
+
+    public
 }
