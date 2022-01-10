@@ -6,5 +6,6 @@ public class ProductApp {
         // accessible (protected fields with same package)
         System.out.println(product.name);
         System.out.println(product.price);
+        System.out.println(product);
     }
 }

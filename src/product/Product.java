@@ -18,5 +18,7 @@ public class Product {
         this.type = type;
     }
 
-    public
+    public String toString() {
+        return "Product name: " + name + " | Price: " + price;
+    }
 }
