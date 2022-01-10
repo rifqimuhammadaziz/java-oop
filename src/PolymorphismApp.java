@@ -14,12 +14,22 @@ public class PolymorphismApp {
         employee.sayHello("Xenosty");
 
         sayHello(new Employee("Bagas"));
-        sayHello(new Manager("Bagas"));
-        sayHello(new VicePresident("Bagas"));
+        sayHello(new Manager("Kurnia"));
+        sayHello(new VicePresident("Bayu"));
     }
 
     // create from top of parent
     static void sayHello(Employee employee) {
-        System.out.println("Hello " + employee.name);
+        if (employee instanceof VicePresident) { // checking that employee instance of VP
+            VicePresident vicePresident = (VicePresident) employee; // convert
+            System.out.println("Hello VicePresident : " + vicePresident.name);
+        } else if (employee instanceof Manager) {
+            Manager manager = (Manager) employee;
+            System.out.println("Hello Manager : " + manager.name);
+        } else {
+            System.out.println("Hello Employee " + employee.name);
+        }
+
+
     }
 }
