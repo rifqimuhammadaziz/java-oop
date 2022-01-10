@@ -13,6 +13,6 @@ public class VicePresident extends Manager {
      * @param name
      */
     void sayHello(String name) {
-        System.out.println("Hi " + this.name + ", My Name is VP " + name);
+        System.out.println("Hi " + name + ", My Name is VP " + this.name);
     }
 }
