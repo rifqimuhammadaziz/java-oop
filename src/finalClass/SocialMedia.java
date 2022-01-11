@@ -15,3 +15,16 @@ final class Facebook extends SocialMedia {
 //class FakeFacebook extends Facebook {
 //
 //}
+
+class Instagram extends SocialMedia {
+    final void login(String username, String password) {
+
+    }
+}
+
+class FakeInstagram extends Instagram {
+    // ERROR : final method cannot be overridden
+//    void login(String username, String password) {
+//
+//    }
+}
