@@ -29,5 +29,11 @@ public class ValidationApp {
             // empty string
             System.out.println("Data is invalid: " + e.getMessage());
         }
+
+        System.out.println("============================");
+
+        LoginRequest loginRequest2 = new LoginRequest(null, null);
+        ValidationUtil.validateRuntime(loginRequest2);
+        System.out.println("Success");
     }
 }
