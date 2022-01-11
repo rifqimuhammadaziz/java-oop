@@ -9,6 +9,8 @@ public class ProductApp {
         System.out.println(product);
 
         Product product1 = new Product("iPhone", 15000000);
+
         System.out.println(product.equals(product1));
+        System.out.println(product.hashCode() == product.hashCode());
     }
 }
