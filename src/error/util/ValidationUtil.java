@@ -1,7 +1,10 @@
 package error.util;
 
+import annotation.NotBlank;
 import error.BlankException;
 import error.ValidationException;
+
+import java.lang.reflect.Field;
 
 public class ValidationUtil {
     public static void validate(LoginRequest loginRequest) throws ValidationException, NullPointerException {
@@ -25,6 +28,33 @@ public class ValidationUtil {
             throw new NullPointerException("Password is null");
         } else if (loginRequest.password.isBlank()) {
             throw new BlankException("Password is blank");
+        }
+    }
+
+    /**
+     * Validation Reflection (like validation framework)
+     * it can be used to validate all fields on class (add annotation @NotBlank at fields)
+     * @param object
+     */
+    // any class can be validated
+    public static void validationReflection(Object object) {
+        Class aClass = object.getClass();
+        Field[] fields = aClass.getDeclaredFields(); // get all fields (private & public)
+
+        for (var field : fields) {
+            field.setAccessible(true);
+
+            if (field.getAnnotation(NotBlank.class) != null) {
+                // validated
+                try {
+                    String value = (String) field.get(object);
+                    if (value == null || value.isBlank()) {
+                        throw new BlankException("Field " + field.getName() + " is blank!");
+                    }
+                } catch (IllegalAccessException exception) {
+                    System.out.println("Cannot access field " + field.getName());
+                }
+            }
         }
     }
 }
